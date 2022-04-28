@@ -1,17 +1,17 @@
 //------------------------------------------------------------layout
-.header {
-	position: fixed;
-	top: 0;
-	left: 0;
+// .header {
+// 	position: fixed;
+// 	top: 0;
+// 	left: 0;
 
-	height: var(--height-header);
-	width: 100%;
+// 	height: var(--height-header);
+// 	width: 100%;
 
-	font-size: 1rem;
+// 	font-size: 1rem;
 
-	will-change: transform;
+// 	will-change: transform;
 
-	@include z-index(header);
-}
+// 	@include z-index(header);
+// }
 
 //------------------------------------------------------------layout###

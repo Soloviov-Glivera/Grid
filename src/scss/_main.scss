@@ -1,0 +1,94 @@
+$fontFamily: 'ApercuPro';
+$fontColor: #19202C;
+body{
+    font-family: $fontFamily;
+    color: $fontColor;
+}
+.container{
+    max-width: 115rem;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+.header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.4rem 0 2.85rem 0;
+    gap: 2.5rem;
+}
+.header_logo{
+    flex-grow: 1;
+}
+.header_nav__list{
+    display: flex;
+    align-items: center;
+    gap: 2.5rem;
+}
+.header_nav__item a{
+    font-size: 1.2rem;
+    font-family: 'ApercuPro';
+    text-transform: uppercase;
+    color: $fontColor;
+}
+.header_social{
+    display: flex;
+    align-items: center;
+    gap: 2.5rem;
+}
+.social_item{
+}
+.social_item a svg{
+    fill: #777 !important;;
+}
+.social_item a svg.facebook{
+    width: 1rem;
+    height: 1.9rem;
+}
+.social_item a svg.twitter{
+    width: 2.5rem;
+    height: 1.95rem;
+}
+.social_item a svg.rss{
+    width: 4rem;
+    height: 2rem;
+}
+.social_item a svg.youtube{
+    width: 2rem;
+    height: 1.4rem;
+}
+.header_search{
+    display: flex;
+    align-items: center;
+}
+.icon_search{
+    width: 1.75rem;
+    height: 1.75rem;
+}
+
+.header_lang__list{
+    display: flex;
+}
+.header_lang__item{
+    padding:0 0.5rem;
+    text-transform: uppercase;
+    font-size: 16px;
+    color: #777777;
+    position: relative;
+    &::before{
+        content: '';
+        position: absolute;
+        width: 1px;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        height: 80%;
+        background-color: #777777;
+
+    }
+    &:last-child{
+        padding-right: 0;
+        &::before{
+            background-color: transparent;
+        }
+    }
+}
