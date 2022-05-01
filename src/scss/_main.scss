@@ -1,11 +1,12 @@
 $fontFamily: 'ApercuPro';
 $fontColor: #19202C;
+$greyColor: #777777;
 body{
     font-family: $fontFamily;
     color: $fontColor;
 }
 .container{
-    max-width: 115rem;
+    max-width: 117rem;
     margin: 0 auto;
     padding: 0 1.5rem;
 }
@@ -13,11 +14,15 @@ body{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 1.4rem 0 2.85rem 0;
+    padding: 1.4rem 1.5rem 2.85rem 1.5rem;
     gap: 2.5rem;
 }
+
 .header_logo{
     flex-grow: 1;
+}
+.header_logo svg{
+    max-width: 13.5rem;
 }
 .header_nav__list{
     display: flex;
@@ -35,10 +40,9 @@ body{
     align-items: center;
     gap: 2.5rem;
 }
-.social_item{
-}
+
 .social_item a svg{
-    fill: #777 !important;;
+    fill: $greyColor !important;;
 }
 .social_item a svg.facebook{
     width: 1rem;
@@ -49,7 +53,7 @@ body{
     height: 1.95rem;
 }
 .social_item a svg.rss{
-    width: 4rem;
+    width: 3rem;
     height: 2rem;
 }
 .social_item a svg.youtube{
@@ -71,8 +75,8 @@ body{
 .header_lang__item{
     padding:0 0.5rem;
     text-transform: uppercase;
-    font-size: 16px;
-    color: #777777;
+    font-size: 1.6rem;
+    color: $greyColor;
     position: relative;
     &::before{
         content: '';
@@ -82,7 +86,7 @@ body{
         top: 50%;
         transform: translateY(-50%);
         height: 80%;
-        background-color: #777777;
+        background-color: $greyColor;
 
     }
     &:last-child{
@@ -91,4 +95,256 @@ body{
             background-color: transparent;
         }
     }
+}
+
+.grid_block__wrapper{
+    display: grid;
+    grid-template-columns: repeat(5,21.5rem);
+    gap: 1.8rem;
+    padding: 6.5rem 0;
+    grid-auto-flow: dense;
+}
+.grid_item{
+    background-color: #F4F4F4;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    position: relative;
+    min-height: 22rem;
+}
+.grid_item.background{
+    background: none;
+    
+}
+.grid_item.s_1x2{
+    grid-row: span 2;    
+}
+
+.grid_item.s_2x1{
+    grid-column: span 2;    
+}
+.grid_item.s_2x2{
+    grid-column: span 2;    
+    grid-row: span 2;    
+}
+.grid_item.s_2x3{
+    grid-column: span 3;    
+    grid-row: span 2;    
+}
+.grid_item.background .grid_item__content{
+    justify-content: flex-end;
+}
+
+.grid_item__title.title_22px{
+    font-size: 2.2rem;
+}
+.grid_item__title.title_36px{
+    font-size: 3.6rem;
+    line-height: 3.6rem;
+}
+
+
+
+.grid_item__content{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    padding: 1.5rem 2.5rem;
+
+}
+
+.grid_item__caption{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    font-size: 1.6rem;
+    gap: 1.2rem;
+}
+.grid_item__description{
+    font-size: 1.2rem;
+    margin-top: 20px;
+}
+.grid_item__tag{
+    line-height: 1.1rem;
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: #00568A;
+    max-width: fit-content;
+
+}
+.grid_item__author{
+    color: $greyColor;
+    font-size: 1.2rem;
+
+}
+
+.grid_item__date{
+    margin-top: 1rem;
+    display: flex;
+    justify-content: space-between;
+}
+.grid_item__background{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    top: 0;
+    left: 0;
+}
+.grid_item__background img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  
+}
+.grid_item__date span{
+    font-size: 1.2rem;
+    color: $greyColor;
+
+}
+
+
+.grid_item.background .grid_item__content .grid_item__caption{
+    flex-direction: column;
+    display: inline-flex;
+}
+.grid_item.background .grid_item__content .grid_item__caption .grid_item__tag{
+    background-color: #00568A;
+
+    padding: 0.5rem 1.5rem;
+}
+.grid_item.background .grid_item__content .grid_item__caption .grid_item__tag,
+.grid_item.background .grid_item__content .grid_item__caption .grid_item__author{
+    color: #fff;
+}
+.grid_item.background .grid_item__content .grid_item__title{
+    color: #fff;
+    font-size: 1.6rem;
+    text-transform: uppercase;
+}
+.grid_item.background .grid_item__content .grid_item__description{
+    color: #fff;
+}
+
+.grid_item.background .grid_item__content .grid_item__date span{
+    color: #fff;
+
+}
+.grid_item.background .grid_item__date{
+    margin-top: 2.5rem;
+
+}
+
+.grid_item.video .grid_item__text {
+    display: flex;
+    justify-content: flex-end;
+}
+.grid_item.video .grid_item__content .grid_item__caption{
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    margin-bottom: 5rem;
+}
+.grid_item.video .grid_item__content .grid_item__caption .grid_item__author{
+    font-size: 1.28rem;
+    padding: 0.5rem 1rem;
+    border: 1px solid #fff;
+    display: inline;
+}
+.grid_item.video .grid_item__content .grid_item__title{
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+}
+.grid_item.video .grid_item__content .grid_item__title span{
+    text-align: center;
+    max-width: fit-content;
+    color: $fontColor;
+    padding: 0.5rem 1.5rem;
+    background-color: #fff;
+    &:first-child,
+    &:nth-child(2){
+        color: #BD243A;
+    }
+}
+
+
+.grid_item__watch{
+    display: flex;
+    align-items: center;
+    position: absolute;
+    bottom: 2rem;
+    right: 2rem;
+}
+
+.grid_item__watch span{
+    font-size: 1.2rem;
+    color: #fff;
+    margin-right: 1rem;
+}
+.grid_item__watch svg{
+    width: 1.7rem;
+    height: 1.7rem;
+    fill:#fff;
+}
+.s_2x1.image{
+    flex-direction: row;
+    gap: 0;
+}
+
+.grid_item.image .grid_item__content{
+    width: 50%;
+}
+.s_1x2.image{
+    gap: 0;
+}
+.s_2x2 .grid_item__content .grid_item__text .grid_item__caption{
+    flex-direction: row;
+}
+.image.s_1x2 .grid_item__img,
+.image.s_1x2 .grid_item__content{
+    width: 100%;
+}
+.grid_item__img{
+    width: 50%;
+    & img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+.grid_item__tag.tag_green{
+    color: #4C7D14;
+}
+.grid_item__tag.tag_blue{
+    color: #00568A;
+}
+.grid_item__tag.tag_lightblue{
+    color: #5496E3;
+}
+.grid_item__tag.tag_orange{
+    color: #F98C30;
+}
+.grid_item__tag.tag_pink{
+    color: #C646A3;
+}
+.grid_item__tag.tag_violet{
+    color: #3A2796;
+}
+.grid_item__tag.tag_red{
+    color: #AF2323;
+}
+
+.grid_item .label{
+    position: absolute;
+    top: 1.2rem;
+    right: 1.2rem;
+    color: #fff;
+    text-transform: uppercase;
+}
+.grid_item .label svg{
+    width: 0.7rem;
+    height: 1.5rem;
 }
