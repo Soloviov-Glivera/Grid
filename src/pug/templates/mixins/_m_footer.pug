@@ -1,2 +1,78 @@
 mixin footer
 	footer.footer
+		.footer__wrapper.container 
+			.footer_column 
+				.footer__logo 
+					+icon('footer_logo')
+				.footer_column__title 
+					| Платформа AI
+				+social({
+					mod_block: 'footer_social',
+					items: [
+						{name_icon: 'facebook', mod_icon: 'facebook icon_footer'},
+						{name_icon: 'twitter', mod_icon: 'twitter icon_footer'},
+						{name_icon: 'rss_footer', mod_icon: 'rss_footer icon_footer'},
+						{name_icon: 'youtube', mod_icon: 'youtube icon_footer'}
+					]
+				})
+				.footer__copyright 
+					span ©
+					span 2020 Everest. <br> ALL RIGHTS RESERVED
+			.footer_column 
+				+menu({
+					gl_class: 'footer_nav',
+					items: [
+						{title: 'Кто мы', url: '#', active: false},
+						{title: 'Что мы делаем', url: '#', active: false},
+						{title: 'Направления работы', url: '#', active: false},
+						{title: 'Компетенции', url: '#', active: false},
+						{title: 'Команда', url: '#', active: false},
+						{title: 'Новости', url: '#', active: false},
+						{title: 'Партнеры', url: '#', active: false},
+						{title: 'Контакты', url: '#', active: false}
+					]
+				})
+			.footer_column 
+				.footer_column__title 
+					| Аналитика
+				.footer_tag_list
+					.footer_tag_list__title Решение:
+					+menu({
+						gl_class: 'footer_tag_list',
+						items: [
+							{title: 'Банки', url: '#', active: false},
+							{title: 'Страхование', url: '#', active: false},
+							{title: 'Здравоохранение', url: '#', active: false},
+							{title: 'Транспорт и логистика', url: '#', active: false},
+							{title: 'Государственный сектор', url: '#', active: false},
+							{title: 'Ритейл и eCommerce', url: '#', active: false},
+							{title: 'Телекомуникации', url: '#', active: false}
+						]
+					})
+			.footer_column        
+				.footer_column__title 
+					| О нас
+				.footer_description 
+					span.
+						EVEREST - опытный интегратор digital-технологий,
+						 продуктов и сервисов для цифровой трансформации бизнеса,
+						  корпоративного и государственного секторов.
+
+					span.
+						Разрабатывает и внедряет решения на базе AI,
+						 используя методы Data Data и ML для совершенствования
+						  и автоматизации бизнес-процессов клиентов.
+
+					span.
+						Всегда оперирует тенденциями цифрового мира и концентрирует
+						 свои усилия на уникальности и инновационности методов в работе с 
+						 каждым клиентом над созданием и адаптацией digital-идей и концепций.
+				form.footer_form 
+					input(type="email" placeholder='Email')
+					button.button_submit(type='submit') Подписаться
+
+       
+           
+            
+           
+            
