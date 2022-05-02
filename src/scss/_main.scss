@@ -35,6 +35,24 @@ body{
     font-family: 'ApercuPro';
     text-transform: uppercase;
     color: $fontColor;
+    text-decoration: none;
+    transition: .3s;
+    position: relative;
+    &::before{
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 0;
+        height: 1px;
+        background-color: $fontColor;
+        transition: .3s;
+    }
+    &:hover{
+        &::before{
+            width: 100%;
+        }
+    }
 }
 .social_list{
     display: flex;
@@ -44,6 +62,10 @@ body{
 
 .header_social .social_item a svg{
     fill: $greyColor;
+    transition: .3s;
+    &:hover{
+        fill: rgb(40, 38, 38);
+    }
 }
 .social_item a svg.facebook{
     width: 1rem;
@@ -375,6 +397,11 @@ body{
 }
 .footer_nav__item a{
     color: inherit;
+    transition: .3s;
+    text-decoration: none;
+    &:hover{
+        color: rgb(200, 199, 199);
+    }
 }
 .footer__logo svg{
     width: 13.6rem;
@@ -386,9 +413,7 @@ body{
         width: 41rem;
     }
 }
-.footer_social{
-    margin-bottom: 1.7rem;
-}
+
 .footer_social{
     margin-bottom: 1.7rem;
 }
@@ -416,6 +441,11 @@ body{
 .footer_tag_list__item a{
     font-size: 1.4rem;
     color: #fff;
+    transition: .3s;
+    text-decoration: none;
+    &:hover{
+        color: rgb(200, 199, 199);
+    }
 }
 
 .footer_description span{
@@ -427,10 +457,14 @@ body{
 }
 .icon_footer{
     fill: #fff!important;
+    transition: .3s;
+    &:hover{
+        fill: rgb(200, 199, 199)!important;
+    }
 }
 
 .footer_form input[type='email']{
-    border: none;
+    border: 1px solid transparent;
     background-color: rgba(255, 255, 255, 0.4);
     padding: 1.5rem 1rem;
     color: #fff;
@@ -441,9 +475,17 @@ body{
     &::placeholder{
         color: #fff;
     }
+    &:focus{
+        border: 1px solid #fff;
+    }
 }
 .button_submit{
     padding: 1rem 3rem;
     color: #fff;
     border: 1px solid #fff;
+    cursor: pointer;
+    transition: .3s;
+    &:hover{
+        background-color: rgba(255, 255, 255, 0.4);
+    }
 }
