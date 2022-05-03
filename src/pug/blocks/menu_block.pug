@@ -1,0 +1,32 @@
+.mob_menu.hide
+    .mob_menu__close
+        span 
+        span 
+
+    +menu({
+        gl_class: 'menu_nav',
+        items: [
+            {title: 'О нас', url: '#', active: false},
+            {title: 'Решения', url: '#', active: false},
+            {title: 'Аналитика', url: '#', active: false},
+            {title: 'Партнеры', url: '#', active: false},
+            {title: 'Контакты', url: '#', active: false},
+            {title: 'Подписка', url: '#', active: false}
+        ]
+    })
+    +social({
+        mod_block: 'menu_social main_social',
+        items: [
+            {name_icon: 'facebook', mod_icon: 'facebook'},
+            {name_icon: 'twitter', mod_icon: 'twitter'},
+            {name_icon: 'rss', mod_icon: 'rss'},
+            {name_icon: 'youtube', mod_icon: 'youtube'}
+        ]
+    })
+
+    +lang({
+        items:[
+            {name: 'Ua'},
+            {name: 'Ru'}
+        ]
+    })

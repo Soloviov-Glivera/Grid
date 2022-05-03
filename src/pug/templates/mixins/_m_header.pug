@@ -1,7 +1,8 @@
 mixin header
 	header.header.container
 		.header_logo
-			+icon('header_logo')
+			a(href='#')
+				+icon('header_logo')
 		nav.header_nav 
 			+menu({
 				gl_class: 'header_nav',
@@ -15,7 +16,7 @@ mixin header
 				]
 			})
 		+social({
-			mod_block: 'header_social',
+			mod_block: 'header_social main_social',
 			items: [
 				{name_icon: 'facebook', mod_icon: 'facebook'},
 				{name_icon: 'twitter', mod_icon: 'twitter'},
@@ -32,4 +33,8 @@ mixin header
 				{name: 'Ru'}
 			]
 		})
+		.burger 
+			span 
+			span 
+			span
 		
