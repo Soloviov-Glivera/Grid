@@ -10414,28 +10414,6 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./src/images/icons/sprite_icons/header_logo.svg":
-/*!*******************************************************!*\
-  !*** ./src/images/icons/sprite_icons/header_logo.svg ***!
-  \*******************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
-      id: "header_logo-usage",
-      viewBox: "0 0 135.994 44.164",
-      url: "/images/sprite/" + "sprite.svg#header_logo-usage",
-      toString: function () {
-        return this.url;
-      }
-    });
-
-/***/ }),
-
 /***/ "./src/images/icons/sprite_icons/light.svg":
 /*!*************************************************!*\
   !*** ./src/images/icons/sprite_icons/light.svg ***!
@@ -10599,7 +10577,6 @@ __webpack_require__.r(__webpack_exports__);
 var map = {
 	"./facebook.svg": "./src/images/icons/sprite_icons/facebook.svg",
 	"./footer_logo.svg": "./src/images/icons/sprite_icons/footer_logo.svg",
-	"./header_logo.svg": "./src/images/icons/sprite_icons/header_logo.svg",
 	"./light.svg": "./src/images/icons/sprite_icons/light.svg",
 	"./play.svg": "./src/images/icons/sprite_icons/play.svg",
 	"./rss.svg": "./src/images/icons/sprite_icons/rss.svg",

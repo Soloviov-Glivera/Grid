@@ -805,7 +805,7 @@
         }
     ];
 
-.grid_block.container
+.grid_block
     .grid_block__wrapper
         each item in gridItems
             .grid_item(class={background: item.background},class={image: item.image},class={s_2x2: item.s_2x2},class={s_2x1: item.s_2x1},class={s_2x3: item.s_2x3},class={s_1x2: item.s_1x2},class={video: item.video})
@@ -838,16 +838,16 @@
                             if(item.author)
                                 .grid_item__author= item.author
 
-                            if(item.title)
-                                span.grid_item__title(class={title_36px:item.title_36},class={title_22px:item.title_22})!= item.title
+                        if(item.title)
+                            .grid_item__title(class={title_36px:item.title_36},class={title_22px:item.title_22})!= item.title
 
                         if(item.description)
                             .grid_item__description= item.description                    
                 
                     if(item.date)
                         .grid_item__date 
-                            span= item.date
-                            span= item.time
+                            span.date_publication= item.date
+                            span.time_publication= item.time
                     if(item.video)
                         a(href="#").grid_item__watch 
                             span Cмотреть

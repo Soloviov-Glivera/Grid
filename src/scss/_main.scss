@@ -18,25 +18,35 @@ body{
     padding: 0 1.5rem;
 }
 .header{
+    padding: 1.4rem 1.5rem;
+    min-height: 7.5rem;
+}
+.header_in{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 1.4rem 1.5rem 2.85rem 1.5rem;
-    gap: 2.5rem;
+    max-width: 115.5rem;
+    margin: 0 auto;
 }
-
 .header_logo{
     flex-grow: 1;
 }
-.header_logo svg{
+.header_logo{
     max-width: 13.5rem;
-    max-height: 4.3rem;
+}
+.header_logo img{
+    width: 100%;
 }
 
 .header_nav__list{
     display: flex;
     align-items: center;
-    gap: 2.5rem;
+}
+.header_nav__item{
+    margin-right: 2.5rem;
+    &:last-child{
+        margin-right: 0;
+    }
 }
 .header_nav__item a{
     font-size: 1.2rem;
@@ -67,7 +77,12 @@ body{
 .social_list{
     display: flex;
     align-items: center;
-    gap: 2.5rem;
+}
+.social_item{
+    margin-right: 2.5rem;
+    &:last-child{
+        margin-right: 0;
+    }
 }
 
 .main_social .social_item a svg{
@@ -80,23 +95,28 @@ body{
     }
   
 }
-.social_item a svg.facebook{
+.social_link.facebook{
     width: 1rem;
     height: 1.9rem;
 }
-.social_item a svg.twitter{
+.social_link.twitter{
     width: 2.5rem;
     height: 1.95rem;
 }
-.social_item a svg.rss,
-.social_item a svg.rss_footer{
+.social_link.rss{
     width: 3rem;
     height: 2rem;
 }
-.social_item a svg.youtube{
+.social_link.youtube{
     width: 2rem;
     height: 1.4rem;
 }
+.social_item a svg{
+    width: inherit;
+    height: inherit;
+}
+
+
 .header_search{
     display: flex;
     align-items: center;
@@ -223,11 +243,16 @@ body{
     top: -100%;
 }
 
+.grid_block{
+    padding: 0 1.5rem;
+}
 .grid_block__wrapper{
     display: grid;
     grid-template-columns: repeat(5,21.5rem);
-    gap: 1.8rem;
+    gap: 2rem;
     padding: 6.5rem 0;
+    max-width: 115.5rem;
+    margin: 0 auto;
     grid-auto-flow: dense;
     @media screen and (max-width: 1210px) {
         grid-template-columns: repeat(3,1fr);
@@ -243,7 +268,6 @@ body{
     background-color: #F4F4F4;
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
     position: relative;
     min-height: 22rem;
 }
@@ -285,7 +309,7 @@ body{
 .grid_item__title{
     word-wrap:break-word;
     width: 100%;
-    
+    margin-bottom: 1rem;
 }
 .grid_item__title.title_22px{
     font-size: 2.2rem;
@@ -311,14 +335,13 @@ body{
 
 .grid_item__caption{
     display: flex;
-    justify-content: space-between;
     flex-wrap: wrap;
     font-size: 1.6rem;
-    gap: 1.2rem;
+
 }
 .grid_item__description{
     font-size: 1.2rem;
-    margin-top: 20px;
+    margin-bottom: 1rem;
 }
 .grid_item__tag{
     line-height: 1.1rem;
@@ -326,18 +349,22 @@ body{
     font-weight: 500;
     color: #00568A;
     max-width: fit-content;
+    margin-bottom: 1rem;
+    margin-right: auto;
 
 }
 .grid_item__author{
     color: $greyColor;
     font-size: 1.2rem;
+    margin-bottom: 1.5rem;
 
 }
 
 .grid_item__date{
-    margin-top: 1rem;
-    display: flex;
-    justify-content: space-between;
+    display: inline-flex;
+}
+.time_publication{
+    margin-left: auto;
 }
 .grid_item__background{
     position: absolute;
@@ -411,7 +438,6 @@ body{
     display: inline-flex;
     flex-direction: column;
     align-items: center;
-    gap: 2px;
 }
 .grid_item.video .grid_item__content .grid_item__title span{
     text-align: center;
@@ -419,6 +445,7 @@ body{
     color: $fontColor;
     padding: 0.5rem 1.5rem;
     background-color: #fff;
+    margin-bottom: 0.3rem;
     &:first-child,
     &:nth-child(2){
         color: #BD243A;
@@ -446,14 +473,10 @@ body{
 }
 .s_2x1.image{
     flex-direction: row;
-    gap: 0;
 }
 
 .grid_item.image .grid_item__content{
     width: 50%;
-}
-.s_1x2.image{
-    gap: 0;
 }
 .s_2x2 .grid_item__content .grid_item__text .grid_item__caption{
     flex-direction: row;
@@ -536,7 +559,7 @@ body{
     border-bottom: 1px solid #fff;
     text-transform: uppercase;
     @media screen and (max-width: 1050px) {
-        max-width: 150px;
+        max-width: 15rem;
     }
 }
 .footer_nav__item a{
@@ -549,10 +572,13 @@ body{
         }
     }
 }
-.footer__logo svg{
+.footer__logo{
     width: 13.6rem;
-    height: 4.5rem;
-
+    margin-bottom: 10rem;
+    display: block;
+}
+.footer__logo img{
+    width: inherit;
 }
 .footer_column{
     &:last-child{
@@ -587,6 +613,16 @@ body{
 .footer_social{
     margin-bottom: 1.7rem;
 }
+.footer_social .social_item a svg{
+    fill: #fff;
+    transition: .3s;
+    @media screen and (min-width: 1024px) {
+        &:hover{
+            fill: rgb(185, 185, 185);
+        }
+    }
+  
+}
 .footer__copyright{
     display: inline-flex;
     align-items: center;
@@ -620,27 +656,25 @@ body{
     }
 }
 
-.footer_description span{
+.footer_description{
+    margin-bottom: 2rem;
+}
+.footer_description p{
     color: #fff;
     font-size: 1.2rem;
     margin-bottom: 2rem;
     display: inline-block;
     line-height: 1.6rem;
-}
-.icon_footer{
-    fill: #fff!important;
-    transition: .3s;
-    @media screen and (min-width: 1024px) {
-        &:hover{
-            fill: rgb(200, 199, 199)!important;
-        }
+    &:last-child{
+        margin-bottom: 0;
     }
 }
+
 
 .footer_form{
     display: flex;
 }
-.footer_form input[type='email']{
+.footer_form__input_email{
     border: 1px solid transparent;
     background-color: rgba(255, 255, 255, 0.4);
     padding: 1.5rem 1rem;
@@ -656,7 +690,7 @@ body{
         border: 1px solid #fff;
     }
 }
-.button_submit{
+.footer_form__btn_submit{
     padding: 1rem 3rem;
     color: #fff;
     border: 1px solid #fff;

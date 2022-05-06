@@ -2,17 +2,17 @@ mixin footer
 	footer.footer
 		.footer__wrapper.container 
 			.footer_column 
-				.footer__logo 
-					+icon('footer_logo')
+				a(href='').footer__logo 
+					img(src="../images/footer_logo.png", alt="")
 				.footer_column__title 
 					| Платформа AI
 				+social({
 					mod_block: 'footer_social',
 					items: [
-						{name_icon: 'facebook', mod_icon: 'facebook icon_footer'},
-						{name_icon: 'twitter', mod_icon: 'twitter icon_footer'},
-						{name_icon: 'rss_footer', mod_icon: 'rss_footer icon_footer'},
-						{name_icon: 'youtube', mod_icon: 'youtube icon_footer'}
+						{name_icon: 'facebook', mod_link: 'facebook'},
+						{name_icon: 'twitter', mod_link: 'twitter'},
+						{name_icon: 'rss', mod_link: 'rss'},
+						{name_icon: 'youtube', mod_link: 'youtube'}
 					]
 				})
 				.footer__copyright 
@@ -53,23 +53,23 @@ mixin footer
 				.footer_column__title 
 					| О нас
 				.footer_description 
-					span.
+					p.
 						EVEREST - опытный интегратор digital-технологий,
 						 продуктов и сервисов для цифровой трансформации бизнеса,
 						  корпоративного и государственного секторов.
 
-					span.
+					p.
 						Разрабатывает и внедряет решения на базе AI,
 						 используя методы Data Data и ML для совершенствования
 						  и автоматизации бизнес-процессов клиентов.
 
-					span.
+					p.
 						Всегда оперирует тенденциями цифрового мира и концентрирует
 						 свои усилия на уникальности и инновационности методов в работе с 
 						 каждым клиентом над созданием и адаптацией digital-идей и концепций.
 				form.footer_form 
-					input(type="email" placeholder='Email')
-					button.button_submit(type='submit') Подписаться
+					input.footer_form__input_email(type="email" placeholder='Email')
+					button.footer_form__btn_submit(type='submit') Подписаться
 
        
            
