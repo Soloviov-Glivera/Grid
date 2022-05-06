@@ -420,11 +420,11 @@ body{
 
 .grid_item.video .grid_item__text {
     display: flex;
-    justify-content: flex-end;
+    flex-direction: column-reverse;
+    align-items: flex-end;
 }
 .grid_item.video .grid_item__content .grid_item__caption{
     display: flex;
-    flex-direction: column-reverse;
     align-items: center;
     margin-bottom: 5rem;
 }
@@ -437,6 +437,7 @@ body{
 .grid_item.video .grid_item__content .grid_item__title{
     display: inline-flex;
     flex-direction: column;
+    width: inherit;
     align-items: center;
 }
 .grid_item.video .grid_item__content .grid_item__title span{
