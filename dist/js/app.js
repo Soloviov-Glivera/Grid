@@ -212,18 +212,16 @@ var pageWidgetInit = function pageWidgetInit() {
   \**************************/
 /***/ (() => {
 
-var burder = document.querySelector('.burger');
-var mobMenu = document.querySelector('.mob_menu');
-var mobMenuClose = document.querySelector('.mob_menu__close');
-burder.addEventListener('click', function () {
-  if (mobMenu.classList.contains('hide')) {
-    mobMenu.classList.remove('hide');
+var burger = document.querySelector('.burger');
+var mobMenu = document.querySelector('.header_menu');
+burger.addEventListener('click', function () {
+  if (mobMenu.classList.contains('header_menu--hide')) {
+    mobMenu.classList.remove('header_menu--hide');
+    burger.classList.add('burger--open');
   } else {
-    mobMenu.classList.add('hide');
+    mobMenu.classList.add('header_menu--hide');
+    burger.classList.remove('burger--open');
   }
-});
-mobMenuClose.addEventListener('click', function () {
-  mobMenu.classList.add('hide');
 });
 
 /***/ }),

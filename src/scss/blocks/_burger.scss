@@ -1,0 +1,57 @@
+.burger,
+.mob_menu {
+    display: inline-block;
+    
+    @include bp($point_4, min) {
+        display: none;
+    }
+}
+
+.burger {
+    position: relative;
+    width: 2.5rem;
+    height: 1.2rem;
+    z-index: 102;
+
+    & span {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: inherit;
+        height: 2px;
+        background-color: $fontColor;
+        transition: .3s ease-in-out;
+
+        &:first-child {
+            top: 0;
+            @include bp($point_5) {
+                top: 0.1rem;
+            }
+        }
+
+        &:nth-child(2) {
+            top: 0.5rem;
+        }
+
+        &:last-child {
+            top: 1rem;
+        }
+    }
+    &.burger--open {
+
+        & span {
+            &:first-child {
+                top: 5px;
+                transform: rotate(45deg);
+            }
+            &:nth-child(2) {
+                opacity: 0;
+                transform: translateX(-100%);
+            }
+            &:last-child {
+                top: 5px;
+                transform: rotate(-45deg);
+            }
+        }
+    }
+}

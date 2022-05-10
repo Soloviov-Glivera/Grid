@@ -1,0 +1,48 @@
+.header_nav__list {
+    @extend %global_flex_block_row_wrap_flex-start;
+
+    @include bp($point_4) {
+        flex-direction: column;
+    }
+}
+
+.header_nav__item {
+    margin-right: 2.5rem;
+
+    @include bp($point_4) {
+        margin: 0.5rem 0;
+    }
+
+    &:last-child {
+        margin-right: 0;
+    }  
+}
+
+.header_nav__item a {
+    position: relative;
+    font-size: 1.2rem;
+    font-family: 'ApercuPro';
+    text-transform: uppercase;
+    text-decoration: none;
+    color: $fontColor;
+    transition: .3s;
+
+    @include bp($point_3, min) {
+        &:hover {
+            &::before {
+                width: 100%;
+            }
+        }
+    }
+
+    &::before {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 0;
+        height: 1px;
+        background-color: $fontColor;
+        transition: .3s;
+    }
+}

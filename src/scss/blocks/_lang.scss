@@ -1,0 +1,29 @@
+.lang__list {
+    @extend %global_flex_block_row_nowrap_flex-start_center;
+}
+.lang__item {
+    position: relative;
+    padding: 0 0.5rem;
+    font-size: 1.6rem;
+    text-transform: uppercase;
+    color: $greyColor;
+
+    &::before {
+        content: '';
+        position: absolute;
+        right: 0;
+        top: 50%;
+        width: 1px;
+        height: 80%;
+        background-color: $greyColor;
+        transform: translateY(-50%);
+    }
+
+    &:last-child {
+        padding-right: 0;
+        
+        &::before {
+            background-color: transparent;
+        }
+    }
+}
