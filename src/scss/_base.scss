@@ -1,15 +1,21 @@
 //------------------------------------------------------------base styles
-// :root {
-// 	--full-screen: calc(var(--vh, 1vh) * 100);
+:root {
+	// --full-screen: calc(var(--vh, 1vh) * 100);
 
-// 	--height-header: 10rem;
-// 	--height-footer: 10rem;
-// 	--gl-indent: 3rem;
-// }
+	// --height-header: 10rem;
+	// --height-footer: 10rem;
+	--gl-indent: 1.5rem;
+}
 
 html {
 	height: 100%;
-	font: 400 calc(100vw / 1920 * 10)/1.33 $font_1;
+	// font: 400 calc(100vw / 1920 * 10)/1.33 $font_1;
+	
+	font-size: 10px;
+
+	@include bp($point_5){
+		font-size: 9px;
+	}
 }
 
 body {
@@ -30,6 +36,9 @@ body {
 	@supports (display: grid) {
 		display: block;
 	}
+
+	font-family: $fontFamily;
+    color: $fontColor;
 }
 
 .wrapper {

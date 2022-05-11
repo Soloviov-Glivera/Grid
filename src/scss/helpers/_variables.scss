@@ -2,11 +2,17 @@
 $font_path: "../fonts/";
 $font_1: 'RobotoCondensed', sans-serif;
 $font_size_base: 1.6rem;
+$fontFamily: 'ApercuPro';
+
 //---------------------------------------------fonts###
 
 //---------------------------------------------colors
 $white: #fff;
 $black: #000;
+
+$fontColor: #19202C;
+$greyColor: #777777;
+$footerBg: #BD243A;
 
 $color_text_base: $black;
 $color_link_base:#4aa3df;
@@ -22,8 +28,8 @@ $z-index: (
 //---------------------------------------------z-index###
 
 //---------------------------------------------layout
-$page_width: 96rem;
 
+$page_width: 115.5rem;
 //---------------------------------------------layout###
 
 //---------------------------------------------global values
@@ -32,14 +38,13 @@ $gl_radius:.5rem;
 
 //---------------------------------------------media points
 $point_1: 1200px;
-$point_2: 1050px;//add new point
-$point_3: 1024px;
-$point_4: 990px; //change 1023px to 990px
-$point_5: 768px;
-$point_6: 550px; //change 640px to 550px
-$point_7: 480px;
-$point_8: 375px;
-$point_9: 320px;
+$point_2: 1024px;
+$point_3: 1023px; 
+$point_4: 768px;
+$point_5: 640px; 
+$point_6: 480px;
+$point_7: 375px;
+$point_8: 320px;
 //---------------------------------------------media points
 
 //---------------------------------------------forms

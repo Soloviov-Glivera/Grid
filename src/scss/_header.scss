@@ -17,62 +17,115 @@
 //------------------------------------------------------------layout###
 
 .header {
-    min-height: 7.5rem;
-    padding: 1.4rem 1.5rem;
+	min-height: 7.5rem;
+	padding: var(--gl-indent);
 }
 
 .header_in {
-    @extend %global_flex_block_row_nowrap_space_between_center;
-    
-    max-width: 115.5rem;
-    margin: 0 auto;
+	@extend %global_flex_block_row_nowrap_space_between_center;
 }
 
 .header_menu {
-    @extend %global_flex_block_row_nowrap_space_between_center;
+	@extend %global_flex_block_row_nowrap_space_between_center;
 
-    transition: .3s ease-in-out;
+	transition: .3s ease-in-out;
 
-    @include bp($point_4) {
-        position: absolute;
-        top: 0;
-        right: 0;
-        flex-direction: column;
-        padding: 2.5rem;
-        background-color: #f4f4f4;
-        z-index: 101;
-    }
-    
-    &.header_menu--hide {
-        top: -100%;
-    }
+	@include bp($point_3) {
+		position: absolute;
+		top: 0;
+		right: 0;
+		flex-direction: column;
+		padding: 2.5rem;
+		background-color: #f4f4f4;
+		z-index: 101;
+	}
+
+	&.header_menu--hide {
+		top: -100%;
+	}
 }
 
 .header_logo {
-    flex-grow: 1;
-    max-width: 13.5rem;
-    & img {
-        width: 100%;
-    }
+	flex-grow: 1;
+	max-width: 13.5rem;
+
+	& img {
+		width: 100%;
+	}
+}
+
+.header_nav__list {
+	@extend %global_flex_block_row_wrap_flex-start;
+
+	@include bp($point_3) {
+			flex-direction: column;
+	}
+}
+
+.header_nav__item {
+
+	@include bp($point_3, min) {
+		margin-right: 2.5rem;
+	}
+	@include bp($point_3) {
+		margin: 0.5rem 0;
+	}
+
+	&:last-child {
+			margin-right: 0;
+	}  
+}
+
+.header_nav__item a {
+	position: relative;
+	font-size: 1.2rem;
+	font-family: 'ApercuPro';
+	text-transform: uppercase;
+	text-decoration: none;
+	color: $fontColor;
+	transition: .3s;
+
+	@include bp($point_3, min) {
+			&:hover {
+					&::before {
+							width: 100%;
+					}
+			}
+	}
+
+	&::before {
+			content: '';
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			width: 0;
+			height: 1px;
+			background-color: $fontColor;
+			transition: .3s;
+	}
 }
 
 .header_social {
-    margin: 0 2.5rem;
-    @include bp($point_4) {
-        margin: 2.5rem 0;
-    }
+
+	@include bp($point_3, min) {
+		margin: 0 2.5rem;
+	}
+
+	@include bp($point_3) {
+		margin: 2.5rem 0;
+	}
 }
 
 .header_search {
 
-    @include bp($point_4) {
-        display: none;
-    }
+	@include bp($point_3) {
+		display: none;
+	}
 }
 
 .icon_search {
-    width: 1.75rem;
-    height: 1.75rem;
-    margin-right: 2.5rem;
-    fill: #777!important;
+	width: 1.75rem;
+	height: 1.75rem;
+	margin-right: 2.5rem;
+	fill: #777!important;
 }
