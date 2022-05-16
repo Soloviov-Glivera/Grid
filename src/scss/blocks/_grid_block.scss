@@ -1,13 +1,13 @@
-.grid_block {
+.grid_section {
 	padding: 0 1.5rem;
+	padding-bottom: 6.5rem;
 }
 
-.grid_block__wrapper {
+.grid_section__wrapper {
 	display: grid;
 	grid-template-columns: repeat(5,21.5rem);
 	grid-auto-flow: dense;
 	gap: 2rem;
-	padding: 6.5rem 0;
 	margin: 0 auto;
 	max-width: 115.5rem;
 
@@ -80,9 +80,16 @@
 }
 
 .grid_item__title {
+	display: block;
 	width: 100%;
 	margin-bottom: 1rem;
 	word-wrap:break-word;
+	color: $fontColor;
+	transition: .3s;
+
+	&:hover {
+		text-shadow: 0 0 1px rgba($black, .6);
+	}
 
 	&.grid_item__title--size_1_mod {
 		font-size: 3.6rem;
@@ -98,13 +105,13 @@
 		margin-bottom: 0.3rem;
 		padding: 0.5rem 1.5rem;
 		color: #BD243A;
-		background-color: #fff;
+		background-color: $white;
 	}
 
 	.grid_item--bg_mod & {
 		font-size: 1.6rem;
 		text-transform: uppercase;
-		color: #fff;
+		color: $white;
 	}
 
 	.grid_item--video_mod & {
@@ -141,7 +148,7 @@
 }
 
 .grid_item__caption {
-	@extend %global_flex_block_row_wrap_flex-start;
+	@extend %global_flex_block_row_wrap_flex-start_center;
 
 	font-size: 1.6rem;
 
@@ -163,81 +170,131 @@
 	font-size: 1.2rem;
 
 	.grid_item--bg_mod & {
-		color: #fff;
+		color: $white;
 	}
 }
 
 .grid_item__tag {
+	position: relative;
 	max-width: fit-content;
-	margin-bottom: 1rem;
 	margin-right: auto;
+	padding: 0.4rem 0;
+	padding-right: 1rem;
 	font-size: 1.2rem;
 	font-weight: 500;
 	line-height: 1.1rem;
 	color: #00568A;
 
+	transition: .3s;
+
+	&:hover {
+		&::before{
+			transform-origin: 0 50%;
+			transform: scale3d(1,1,1);
+		}
+	}
+
+	@include bp($point_3,min){
+		&::before{
+			content: '';
+			position: absolute;
+			bottom: -2px;
+			left: 0%;
+			width: 95%;
+			height: 1px;
+			transform-origin: 100% 50%;
+			transform: scale3d(0,1,1) ;
+			transition: transform .5s;
+			z-index: 100;
+		}
+	}
+
 	&.grid_item__tag--color_1_mod {
 		color: #AF2323;
+		&::before{
+			background-color: #AF2323;
+		}
 	}
 
 	&.grid_item__tag--color_2_mod {
 		color: #F98C30;
+		&::before{
+			background-color: #F98C30;
+		}
 	}
 
 	&.grid_item__tag--color_3_mod {
 		color: #4C7D14;
+		&::before{
+			background-color: #4C7D14;
+		}
 	}
 
 	&.grid_item__tag--color_4_mod {
 		color: #5496E3;
+		&::before{
+			background-color: #5496E3;
+		}
 	}
 
 	&.grid_item__tag--color_5_mod {
 		color: #00568A;
+		&::before{
+			background-color: #00568A;
+		}
 	}
 
 	&.grid_item__tag--color_6_mod {
 		color: #3A2796;
+		&::before{
+			background-color: #3A2796;
+		}
 	}
 
 	&.grid_item__tag--color_7_mod {
 		color: #C646A3;
+		&::before{
+			background-color: #C646A3;
+		}
 	}
 
 	.grid_item--bg_mod & {
 		padding: 0.5rem 1.5rem;
-		color: #fff;
+		color: $white;
 		background-color: #00568A;
 	}
 }
 
 .grid_item__author {
-	margin-bottom: 1.5rem;
+	padding: 0.4rem 0;
 	font-size: 1.2rem;
 	color: $greyColor;
 
 	.grid_item--bg_mod & {
-		color: #fff;
+		color: $white;
 	}
 
 .grid_item--video_mod & {
 		display: inline;
 		padding: 0.5rem 1rem;
 		font-size: 1.28rem;
-		border: 1px solid #fff;
+		border: 1px solid $white;
+		margin-bottom: 0;
 	}
 }
 
 .grid_item__date_block {
 	display: inline-flex;
 	color: $greyColor;
+	margin-top: auto;
 
 	.grid_item--bg_mod & {
 		margin-top: 2.5rem;
-		color: #fff;
+		color: $white;
 	}
 
-	& span {
+	& .grid_item__date_publication,
+	& .grid_item__time_publication{
 		font-size: 1.2rem;
 		color: inherit;
 	}
@@ -260,9 +317,11 @@
 .grid_item__text {
 
 	.grid_item--video_mod & {
-		@extend %global_flex_block_row_wrap_flex-start_flex-end;
+		@extend %global_flex_block_row_wrap_flex-start_center;
 
 		flex-direction: column-reverse;
+		max-width: fit-content;
+		margin-left: auto;
 	}
 }
 
@@ -276,18 +335,13 @@
 	& .btn_watch__text {
 		margin-right: 1rem;
 		font-size: 1.2rem;
-		color: #fff;
+		color: $white;
 	}
 
 	& .btn_watch__icon {
 		width: 1.7rem;
 		height: 1.7rem;
-	}
-
-	& .icon_play {
-		width: inherit;
-		height: inherit;
-		fill:#fff;
+		color: $white;
 	}
 }
 
@@ -297,15 +351,18 @@
 	}
 }
 
-.grid_item__img {
+.grid_item__img_wrapper {
 	width: 50%;
+	height: 100%;
+	overflow: hidden;
 
-	& img {
-		width: 100%;
-		height: 100%;
-		object-fit: cover;
+	& .grid_item__img{
+		transition: .3s;
+
+		&:hover{
+			transform: scale(1.05);
+		}
 	}
-
 	.grid_item--img_mod.grid_item--pos_4_mod & {
 		width: 100%;
 	}
@@ -316,7 +373,7 @@
 	top: 1.2rem;
 	right: 1.2rem;
 	text-transform: uppercase;
-	color: #fff;
+	color: $white;
 
 	&.grid_item__label--mod_1,
 	&.grid_item__label--mod_2 {

@@ -3,21 +3,21 @@ mixin footer
 		.footer__wrapper.section_in
 			.footer_column 
 				a(href='').footer__logo 
-					img(src="images/footer_logo.png", alt="")
+					img(src="images/footer_logo.png", alt="" class='cover_img')
 				.footer_column__title 
 					| Платформа AI
 				+social({
 					mod_block: 'footer_social',
 					items: [
-						{name_icon: 'facebook', mod_link: 'facebook'},
-						{name_icon: 'twitter', mod_link: 'twitter'},
-						{name_icon: 'rss', mod_link: 'rss'},
-						{name_icon: 'youtube', mod_link: 'youtube'}
+						{name_icon: 'facebook', mod_link: 'facebook', mod_icon:'icon--size_mod'},
+						{name_icon: 'twitter', mod_link: 'twitter', mod_icon:'icon--size_mod'},
+						{name_icon: 'rss', mod_link: 'rss', mod_icon:'icon--size_mod'},
+						{name_icon: 'youtube', mod_link: 'youtube', mod_icon:'icon--size_mod'}
 					]
 				})
 				.footer__copyright 
-					span ©
-					span 2020 Everest. <br> ALL RIGHTS RESERVED
+					span.footer__copyright__icon ©
+					span.footer__copyright__text 2020 Everest. <br> ALL RIGHTS RESERVED
 			.footer_column 
 				+menu({
 					gl_class: 'footer_nav',
@@ -53,22 +53,28 @@ mixin footer
 				.footer_column__title 
 					| О нас
 				.footer_description 
-					p.
+					p.footer_description__paragraph.
 						EVEREST - опытный интегратор digital-технологий,
 						 продуктов и сервисов для цифровой трансформации бизнеса,
 						  корпоративного и государственного секторов.
 
-					p.
+					p.footer_description__paragraph.
 						Разрабатывает и внедряет решения на базе AI,
 						 используя методы Data Data и ML для совершенствования
 						  и автоматизации бизнес-процессов клиентов.
 
-					p.
+					p.footer_description__paragraph.
 						Всегда оперирует тенденциями цифрового мира и концентрирует
 						 свои усилия на уникальности и инновационности методов в работе с 
 						 каждым клиентом над созданием и адаптацией digital-идей и концепций.
 				form.footer_form 
-					input.footer_form__input_email(type="email" placeholder='Email')
+					+form_input({
+						block_class: 'footer_form__input',
+						field_class: 'footer_form__field',
+						class:'footer_form__input_email',
+						placeholder:'Email',
+						type: 'email'
+					})
 					button.footer_form__btn_submit(type='submit') Подписаться
 
        

@@ -13,7 +13,6 @@
 }
 
 .footer__wrapper {
-	padding: 0 1.5rem;
 	display: grid;
 
 	@include bp($point_2, min){
@@ -35,9 +34,13 @@
 	display: block;
 	margin-bottom: 10rem;
 	width: 13.6rem;
+}
 
-	& img{
-		width: inherit;
+.footer_column__title,
+.footer_nav__list {
+
+	@include bp($point_2) {		
+		max-width: 15rem;
 	}
 }
 
@@ -50,18 +53,20 @@
 	text-transform: uppercase;
 	border-bottom: 1px solid #fff;
 
-	@include bp($point_2) {
-		max-width: 15rem;
+
+}
+.footer_nav__item {
+	&:last-child{
+		margin-bottom: 0;
 	}
 }
 
-.footer_nav__item a {
+.footer_nav__item .footer_nav__link {
 	color: inherit;
 	text-decoration: none;
 	transition: .3s;
 
 	@include bp($point_3,min) {
-		max-width: 15rem;
 
 		&:hover {
 			color: rgb(200, 199, 199);
@@ -117,19 +122,15 @@
 .footer__copyright {
 	display: inline-flex;
 	align-items: center;
+	color: #fff;
 
-	& span {
-		color: #fff;
-
-		&:first-child {
-			margin-right: 0.5rem;
-			font-size: 2.3rem;
-		}
+	& .footer__copyright__icon {
+		margin-right: 0.5rem;
+		font-size: 2.3rem;
 	}
 }
 
 .footer_tag_list__title {
-	padding-bottom: 0.75rem;
 	margin-bottom: 2.65rem;
 	font-size: 1.4rem;
 	color: #fff;
@@ -139,7 +140,7 @@
 .footer_tag_list__item {
 	margin-bottom: 2rem;
 
-	& a {
+	& .footer_tag_list__link {
 		font-size: 1.4rem;
 		color: #fff;
 		text-decoration: none;
@@ -151,16 +152,20 @@
 			}
 		}
 	}
+
+	&:last-child{
+		margin-bottom: 0;
+	}
 }
 
 .footer_description {
 	margin-bottom: 2rem;
 
-	& p {
+	& .footer_description__paragraph {
 		display: inline-block;
 		margin-bottom: 2rem;
 		font-size: 1.2rem;
-		color: #fff;
+		color: $white;
 		line-height: 1.6rem;
 
 		&:last-child {
@@ -171,37 +176,4 @@
 
 .footer_form {
 	display: flex;
-}
-
-.footer_form__input_email {
-	max-width: 22rem;
-	width: 100%;
-	padding: 1.5rem 1rem;
-	margin-right: 2rem;
-	color: #fff;
-	border: 1px solid transparent;
-	border-radius: 4px;
-	background-color: rgba(255, 255, 255, 0.4);
-
-	&::placeholder {
-		color: #fff;
-	}
-
-	&:focus {
-		border: 1px solid #fff;
-	}
-}
-
-.footer_form__btn_submit {
-	padding: 1rem 3rem;
-	color: #fff;
-	border: 1px solid #fff;
-	cursor: pointer;
-	transition: .3s;
-	
-	@include bp($point_3,min) {
-		&:hover {
-			background-color: rgba(255, 255, 255, 0.4);
-		}
-	}
 }

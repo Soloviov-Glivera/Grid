@@ -16,7 +16,7 @@
 		height: 1.3rem;
 	}
 
-	& span {
+	& .burger_decor {
 		position: absolute;
 		top: 50%;
 		left: 0;
@@ -47,7 +47,7 @@
 	}
 
 	&.burger--open {
-		& span {
+		& .burger_decor {
 			opacity: 0;
 			transform: translateX(-100%);
 		}

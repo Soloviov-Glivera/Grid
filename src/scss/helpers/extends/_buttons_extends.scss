@@ -39,3 +39,19 @@
 
 	border-radius: $gl_radius;
 }
+
+.footer_form__btn_submit {
+	padding: 1rem 3rem;
+	color: $white;
+	border: 1px solid $white;
+	cursor: pointer;
+	transition: .3s;
+	
+	@include st_btn();
+
+	@include bp($point_3,min) {
+		&:hover, &:focus {
+			background-color: rgba($white, 0.4);
+		}
+	}
+}
