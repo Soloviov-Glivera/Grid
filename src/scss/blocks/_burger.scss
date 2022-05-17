@@ -1,7 +1,7 @@
 .burger {
 	position: relative;
 	display: inline-block;
-	width: 2.5rem;
+	width: 2.6rem;
 	z-index: 102;
 
 	@include bp($point_5, min) {
@@ -13,19 +13,7 @@
 	}
 	
 	@include bp($point_5) {
-		height: 1.3rem;
-	}
-
-	& .burger_decor {
-		position: absolute;
-		top: 50%;
-		left: 0;
-		width: inherit;
-		height: 2px;
-		transform: translateY(-50%);
-		background-color: $fontColor;
-
-		transition: .3s ease-in-out;
+		height: 1.4rem;
 	}
 	
 	&::before,
@@ -34,13 +22,20 @@
 		position: absolute;
 		width: inherit;
 		height: 2px;
-		background-color: $fontColor;
+		background-color: $color_text_base;
 
 		transition: .3s;
 	}
 
 	&::before{
-		top: 0;
+
+		@include bp($point_5, min) {
+			top: 0;
+		}
+		@include bp($point_5) {
+			top: 1px;
+		}
+	
 	}
 	&::after{
 		bottom: 0;
@@ -60,4 +55,16 @@
 			transform: rotate(-45deg);
 		}
 	}
+}
+
+.burger_decor {
+	position: absolute;
+	top: 50%;
+	left: 0;
+	width: inherit;
+	height: 2px;
+	transform: translateY(-50%);
+	background-color: $color_text_base;
+
+	transition: .3s ease-in-out;
 }

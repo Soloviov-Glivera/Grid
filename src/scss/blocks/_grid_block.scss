@@ -1,15 +1,15 @@
 .grid_section {
-	padding: 0 1.5rem;
-	padding-bottom: 6.5rem;
+	padding: 0 1.6rem;
+	padding-bottom: 6.6rem;
 }
 
 .grid_section__wrapper {
 	display: grid;
-	grid-template-columns: repeat(5,21.5rem);
+	grid-template-columns: repeat(5,21.6rem);
 	grid-auto-flow: dense;
 	gap: 2rem;
 	margin: 0 auto;
-	max-width: 115.5rem;
+	max-width: 116rem;
 
 	@include bp($point_1, $point_4) {
 		grid-template-columns: repeat(3,1fr);
@@ -29,7 +29,7 @@
 
 	position: relative; 
 	min-height: 22rem;
-	background-color: #F4F4F4;
+	background-color: $color_item_bg ;
 
 	&.grid_item--pos_1_mod {
 
@@ -84,7 +84,7 @@
 	width: 100%;
 	margin-bottom: 1rem;
 	word-wrap:break-word;
-	color: $fontColor;
+	color: $color_text_base;
 	transition: .3s;
 
 	&:hover {
@@ -102,9 +102,9 @@
 
 	& .grid_item__title--mod_color {
 		max-width: fit-content;
-		margin-bottom: 0.3rem;
-		padding: 0.5rem 1.5rem;
-		color: #BD243A;
+		margin-bottom: 0.4rem;
+		padding: 0.6rem 1.4rem;
+		color: $color_footer_bg;
 		background-color: $white;
 	}
 
@@ -127,11 +127,11 @@
 	height: 100%;
 
 	@include bp($point_5, min) {
-		padding: 1.5rem 2.5rem;
+		padding: 1.4rem 2.4rem;
 	}
 
 	@include bp($point_5) {
-		padding: 1.5rem 1.5rem;
+		padding: 1.4rem 1.4rem;
 	}
 
 	.grid_item--bg_mod & {
@@ -148,8 +148,9 @@
 }
 
 .grid_item__caption {
-	@extend %global_flex_block_row_wrap_flex-start_center;
+	@extend %global_flex_block_row_wrap_flex-start;
 
+	margin-bottom: 1rem;
 	font-size: 1.6rem;
 
 	.grid_item--bg_mod & {
@@ -178,12 +179,12 @@
 	position: relative;
 	max-width: fit-content;
 	margin-right: auto;
-	padding: 0.4rem 0;
-	padding-right: 1rem;
+	padding-bottom: 0.6rem;
+	padding-right: 1.6rem;
 	font-size: 1.2rem;
 	font-weight: 500;
-	line-height: 1.1rem;
-	color: #00568A;
+	line-height: 1.2rem;
+	color: $color_tag_mod_5;
 
 	transition: .3s;
 
@@ -198,7 +199,7 @@
 		&::before{
 			content: '';
 			position: absolute;
-			bottom: -2px;
+			bottom: 2px;
 			left: 0%;
 			width: 95%;
 			height: 1px;
@@ -210,64 +211,68 @@
 	}
 
 	&.grid_item__tag--color_1_mod {
-		color: #AF2323;
+		color: $color_tag_mod_1;
 		&::before{
-			background-color: #AF2323;
+			background-color: $color_tag_mod_1;
 		}
 	}
 
 	&.grid_item__tag--color_2_mod {
-		color: #F98C30;
+		color: $color_tag_mod_2;
 		&::before{
-			background-color: #F98C30;
+			background-color: $color_tag_mod_2;
 		}
 	}
 
 	&.grid_item__tag--color_3_mod {
-		color: #4C7D14;
+		color: $color_tag_mod_3;
 		&::before{
-			background-color: #4C7D14;
+			background-color: $color_tag_mod_3;
 		}
 	}
 
 	&.grid_item__tag--color_4_mod {
-		color: #5496E3;
+		color: $color_tag_mod_4;
 		&::before{
-			background-color: #5496E3;
+			background-color: $color_tag_mod_4;
 		}
 	}
 
 	&.grid_item__tag--color_5_mod {
-		color: #00568A;
+		color: $color_tag_mod_5;
 		&::before{
-			background-color: #00568A;
+			background-color: $color_tag_mod_5;
 		}
 	}
 
 	&.grid_item__tag--color_6_mod {
-		color: #3A2796;
+		color: $color_tag_mod_6;
 		&::before{
-			background-color: #3A2796;
+			background-color: $color_tag_mod_6;
 		}
 	}
 
 	&.grid_item__tag--color_7_mod {
-		color: #C646A3;
+		color: $color_tag_mod_7;
 		&::before{
-			background-color: #C646A3;
+			background-color: $color_tag_mod_7;
 		}
+	}
+	
+	.grid_item--pos_3_mod &{
+		margin-bottom: 0.6rem;
 	}
 
 	.grid_item--bg_mod & {
 		padding: 0.5rem 1.5rem;
 		color: $white;
-		background-color: #00568A;
+		background-color: $color_tag_mod_5;
 	}
 }
 
 .grid_item__author {
-	padding: 0.4rem 0;
 	font-size: 1.2rem;
+	line-height: 1.2rem;
 	color: $greyColor;
 
 	.grid_item--bg_mod & {
@@ -276,8 +281,8 @@
 
 .grid_item--video_mod & {
 		display: inline;
-		padding: 0.5rem 1rem;
-		font-size: 1.28rem;
+		padding: 0.4rem 1rem;
+		font-size: 1.2rem;
 		border: 1px solid $white;
 		margin-bottom: 0;
 	}
@@ -289,20 +294,26 @@
 	margin-top: auto;
 
 	.grid_item--bg_mod & {
-		margin-top: 2.5rem;
+		margin-top: 2.6rem;
 		color: $white;
 	}
 
+	& .grid_item__date_publication {
+		padding-right: 1rem;
+	}
+
+	& .grid_item__time_publication {
+		margin-left: auto;
+	}
+
 	& .grid_item__date_publication,
-	& .grid_item__time_publication{
+	& .grid_item__time_publication {
 		font-size: 1.2rem;
 		color: inherit;
 	}
 }
 
-.grid_item__time_publication {
-	margin-left: auto;
-}
+
 
 .grid_item__background_img {
 	position: absolute;
@@ -331,6 +342,7 @@
 	position: absolute;
 	bottom: 2rem;
 	right: 2rem;
+	cursor: pointer;
 
 	& .btn_watch__text {
 		margin-right: 1rem;
@@ -339,8 +351,8 @@
 	}
 
 	& .btn_watch__icon {
-		width: 1.7rem;
-		height: 1.7rem;
+		width: 1.74rem;
+		height: 1.74rem;
 		color: $white;
 	}
 }
@@ -368,6 +380,7 @@
 	}
 }
 
+
 .grid_item__label {
 	position: absolute;
 	top: 1.2rem;
@@ -379,13 +392,6 @@
 	&.grid_item__label--mod_2 {
 		display: none;
 
-	}
-
-	& .icon_light {
-		display: none;
-		width: inherit;
-		height: inherit;
-		fill: $black;
 	}
 	
 	&.grid_item__label--mod_1 {
@@ -400,11 +406,15 @@
 		}
 	}
 
+	& .icon_light{
+		display: none;
+	}
+
 	&.grid_item__label--mod_2 {
 		display: block;
-		width: 0.7rem;
-		height: 1.5rem;
-
+		width: 0.6rem;
+		height: 1.4rem;
+		color: $color_text_base;
 		&::before{
 			content: '';
 			position: absolute;
@@ -417,3 +427,4 @@
 		}
 	}
 }
+

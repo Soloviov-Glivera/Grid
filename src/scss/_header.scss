@@ -4,10 +4,13 @@
 	top: 0;
 	left: 0;
 
+	min-height: 7.6rem;	
 	height: var(--height-header);
 	width: 100%;
+	padding: var(--gl-indent);
 
 	font-size: 1rem;
+
 
 	will-change: transform;
 
@@ -15,11 +18,6 @@
 }
 
 //------------------------------------------------------------layout###
-
-.header {
-	min-height: 7.5rem;
-	padding: var(--gl-indent);
-}
 
 .header_in {
 	@extend %global_flex_block_row_nowrap_space_between_center;
@@ -35,8 +33,8 @@
 		top: 0;
 		right: 0;
 		flex-direction: column;
-		padding: 2.5rem;
-		background-color: #f4f4f4;
+		padding: 2.4rem;
+		background-color: $color_item_bg;
 		z-index: 101;
 	}
 
@@ -49,24 +47,24 @@
 
 .header_logo {
 	flex-grow: 1;
-	max-width: 13.5rem;
+	max-width: 13.4rem;
 }
 
 .header_nav__list {
 	@extend %global_flex_block_row_wrap_flex-start;
 
 	@include bp($point_3) {
-			flex-direction: column;
+		flex-direction: column;
 	}
 }
 
 .header_nav__item {
 
 	@include bp($point_3, min) {
-		margin-right: 2.5rem;
+		margin-right: 2.4rem;
 	}
 	@include bp($point_3) {
-		margin: 0.5rem 0;
+		margin: 0.4rem 0;
 	}
 
 	&:last-child {
@@ -74,13 +72,13 @@
 	}  
 }
 
-.header_nav__item .header_nav__link {
+.header_nav__link {
 	position: relative;
 	font-size: 1.2rem;
-	font-family: 'ApercuPro';
+	font-family: $fontFamily;
 	text-transform: uppercase;
 	text-decoration: none;
-	color: $fontColor;
+	color: $color_text_base;
 	transition: .3s;
 
 	@include bp($point_3, min) {
@@ -98,7 +96,7 @@
 			left: 0;
 			width: 0;
 			height: 1px;
-			background-color: $fontColor;
+			background-color: $color_text_base;
 			transition: .3s;
 	}
 }
@@ -106,19 +104,19 @@
 .header_social {
 
 	@include bp($point_3, min) {
-		margin: 0 2.5rem;
+		margin: 0 2.4rem;
 	}
 
 	@include bp($point_3) {
-		margin: 2.5rem 0;
+		margin: 2.4rem 0;
 	}
 }
 
 .header_search {
-	width: 1.75rem;
-	height: 1.75rem;
-	margin-right: 2.5rem;
-	color: #777;
+	width: 1.74rem;
+	height: 1.74rem;
+	margin-right: 2.4rem;
+	color: $greyColor;
 
 	@include bp($point_3) {
 		display: none;
