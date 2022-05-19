@@ -6,6 +6,9 @@ import pageWidgetInit from './dev_vendors/dev_widget';
 // ------------------- imports###
 
 // ------------------  import components
+
+import burgerMenu from './components/burgerMenu';
+
 // ------------------  import components###
 
 window.jQuery = $;
@@ -26,10 +29,12 @@ if (GLOBAL_VARS.projectDevStatus) {
 // -------------------  global variables
 
 const readyFunc = () => {
+	burgerMenu();
 	console.log('ready');
 };
 
 const loadFunc = () => {
+	burgerMenu();
 	console.log('page load');
 };
 

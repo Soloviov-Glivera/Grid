@@ -3,7 +3,7 @@ mixin header
 		.header_in.section_in 
 			a(href='#').header_logo
 				img(src="images/header_logo.png", alt="" class='cover_img')
-			.header_menu.header_menu--hide 
+			.header_menu.header_menu--hide.headerMenu 
 				nav.header_nav 
 					+menu({
 						gl_class: 'header_nav',
@@ -19,10 +19,10 @@ mixin header
 				+social({
 					mod_block: 'header_social main_social',
 					items: [
-						{name_icon: 'facebook', mod_link: 'facebook', mod_icon:'icon--size_mod'},
-						{name_icon: 'twitter', mod_link: 'twitter', mod_icon:'icon--size_mod'},
-						{name_icon: 'rss', mod_link: 'rss', mod_icon:'icon--size_mod'},
-						{name_icon: 'youtube', mod_link: 'youtube', mod_icon:'icon--size_mod'}
+						{name_icon: 'facebook', mod_link: 'social_link--size_1_mod', mod_icon:'icon--size_mod'},
+						{name_icon: 'twitter', mod_link: 'social_link--size_2_mod', mod_icon:'icon--size_mod'},
+						{name_icon: 'rss', mod_link: 'social_link--size_3_mod', mod_icon:'icon--size_mod'},
+						{name_icon: 'youtube', mod_link: 'social_link--size_4_mod', mod_icon:'icon--size_mod'}
 					]
 				})
 				a(href='#').header_search 

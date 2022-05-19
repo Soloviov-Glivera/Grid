@@ -10,11 +10,8 @@
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _scss_main_global_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./scss/main_global.scss */ "./src/scss/main_global.scss");
 /* harmony import */ var _js_app__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./js/app */ "./src/js/app.js");
-/* harmony import */ var _js_script__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./js/script */ "./src/js/script.js");
-/* harmony import */ var _js_script__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_js_script__WEBPACK_IMPORTED_MODULE_2__);
 // scss
  // js
-
 
  // import sprite_icons svg
 
@@ -39,6 +36,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var utils_constants__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! utils/constants */ "./src/js/utils/constants.js");
 /* harmony import */ var utils__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! utils */ "./src/js/utils/index.js");
 /* harmony import */ var _dev_vendors_dev_widget__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./dev_vendors/dev_widget */ "./src/js/dev_vendors/dev_widget.js");
+/* harmony import */ var _components_burgerMenu__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/burgerMenu */ "./src/js/components/burgerMenu.js");
+/* harmony import */ var _components_burgerMenu__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_components_burgerMenu__WEBPACK_IMPORTED_MODULE_4__);
 /* provided dependency */ var __webpack_provided_window_dot_jQuery = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
 /* provided dependency */ var __webpack_provided_window_dot_$ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
 // ------------------- imports
@@ -47,7 +46,8 @@ __webpack_require__.r(__webpack_exports__);
 
  // ------------------- imports###
 // ------------------  import components
-// ------------------  import components###
+
+ // ------------------  import components###
 
 __webpack_provided_window_dot_jQuery = (jquery__WEBPACK_IMPORTED_MODULE_0___default());
 __webpack_provided_window_dot_$ = (jquery__WEBPACK_IMPORTED_MODULE_0___default());
@@ -64,10 +64,12 @@ if (utils_constants__WEBPACK_IMPORTED_MODULE_1__.GLOBAL_VARS.projectDevStatus) {
 
 
 var readyFunc = function readyFunc() {
+  _components_burgerMenu__WEBPACK_IMPORTED_MODULE_4___default()();
   console.log('ready');
 };
 
 var loadFunc = function loadFunc() {
+  _components_burgerMenu__WEBPACK_IMPORTED_MODULE_4___default()();
   console.log('page load');
 };
 
@@ -77,6 +79,29 @@ var loadFunc = function loadFunc() {
 (0,utils__WEBPACK_IMPORTED_MODULE_2__.pageLoad)(function () {
   loadFunc();
 });
+
+/***/ }),
+
+/***/ "./src/js/components/burgerMenu.js":
+/*!*****************************************!*\
+  !*** ./src/js/components/burgerMenu.js ***!
+  \*****************************************/
+/***/ (() => {
+
+var $burger = document.querySelector('.burger');
+var $mobMenu = document.querySelector('.headerMenu');
+
+var burgerMenu = function burgerMenu() {
+  if ($mobMenu.classList.contains('header_menu--hide')) {
+    $mobMenu.classList.remove('header_menu--hide');
+    $burger.classList.add('burger--open');
+  } else {
+    $mobMenu.classList.add('header_menu--hide');
+    $burger.classList.remove('burger--open');
+  }
+};
+
+$burger.addEventListener('click', burgerMenu);
 
 /***/ }),
 
@@ -203,26 +228,6 @@ var pageWidgetInit = function pageWidgetInit() {
 };
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (pageWidgetInit);
-
-/***/ }),
-
-/***/ "./src/js/script.js":
-/*!**************************!*\
-  !*** ./src/js/script.js ***!
-  \**************************/
-/***/ (() => {
-
-var burger = document.querySelector('.burger');
-var mobMenu = document.querySelector('.header_menu');
-burger.addEventListener('click', function () {
-  if (mobMenu.classList.contains('header_menu--hide')) {
-    mobMenu.classList.remove('header_menu--hide');
-    burger.classList.add('burger--open');
-  } else {
-    mobMenu.classList.add('header_menu--hide');
-    burger.classList.remove('burger--open');
-  }
-});
 
 /***/ }),
 
